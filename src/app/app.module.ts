@@ -7,6 +7,7 @@ import { AppLandingPageComponent } from './app-landing-page/app-landing-page.com
 import { AppSearchFormComponent } from './app-search-form/app-search-form.component';
 import { MyGitInfoComponent } from './my-git-info/my-git-info.component';
 import { QueriedGitInfoComponent } from './queried-git-info/queried-git-info.component';
+import { AppNavBarComponent } from './app-nav-bar/app-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { QueriedGitInfoComponent } from './queried-git-info/queried-git-info.com
     AppLandingPageComponent,
     AppSearchFormComponent,
     MyGitInfoComponent,
-    QueriedGitInfoComponent
+    QueriedGitInfoComponent,
+    AppNavBarComponent
   ],
   imports: [
     BrowserModule,

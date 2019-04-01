@@ -1,3 +1,48 @@
-<p>
-  app-landing-page works!
-</p>
+<div class="jumbotron">
+  <div class="container">
+    <h1>{{title}}</h1>
+  </div>
+</div>
+<div class="container">
+
+
+  <template [ngIf]="selectedUser.id">
+    <ol class="breadcrumb">
+      <li><a (click)="go('home')">Home</a></li>
+      <li class="active">{{selectedUser.login}}</li>
+    </ol>
+
+    <div class="view-profile">
+
+      <div class="media">
+        <div class="media-left">
+          <img width="100" height="100" class="media-object" [src]="selectedUser.avatar_url">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{{selectedUser.login}}</h4>
+        </div>
+      </div>
+
+    </div>
+    <hr/>
+    <h2><span *ngIf="loadingFollowers">Followers loading...</span><span *ngIf="!loadingFollowers">Followers</span></h2>
+    <template [ngIf]="selectedUser.followers">
+      <div class="row">
+        <div *ngFor="let follower of selectedUser.followers" class="col-xs-6 col-md-2">
+
+          <div class="thumbnail">
+            <img [src]="follower.avatar_url">
+            <div class="caption">
+              <h4>{{follower.login}}</h4>
+              <p>
+                <button (click)="viewUser(follower)" class="btn btn-primary" role="button">More info</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </template>
+
+
+  </template>

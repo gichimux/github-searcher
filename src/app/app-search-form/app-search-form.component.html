@@ -1,7 +1,29 @@
 <form class="form-inline md-form form-sm active-pink active-pink-2">
-
-    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search Github User Name" aria-label="Search"
-    mdbInput>
+<input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search Github User Name" aria-label="Search"mdbInput>
     <i class="fas fa-search" aria-hidden="true"></i>
+    < div class="row">
+
+      <div [ngIf]="!selectedUser.id">
+        <div *ngFor="let user of users" class="col-xs-6 col-md-2">
+
+          <div class="thumbnail">
+            <img [src]="user.avatar_url">
+            <div class="caption">
+              <h4>{{user.login}}</h4>
+              <p>
+                <button (click)="viewUser(user)" class="btn btn-primary" role="button">More info</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <hr>
+
+    <footer>
+    </footer>
 
 </form>

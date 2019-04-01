@@ -1,2 +1,2 @@
-export class Repository {
+export class Repository { public 
 }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
-import {environment} from '../../environments/environment'
-import { User } from './user'
-import { Repository } from './Repository'
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../../environments/environment';
+import { User } from '../user';
+import { Repository } from './Repository';
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -26,18 +26,6 @@ export class SearchRequestService {
 
 
             }
-
-            export class User {
-    public login?: string;
-    public id?: string;
-    public avatar_url?: string;
-    public url?: string;
-    public followers_url?: string;
-    public email?: string;
-    public followers?: User[];
-
-
-}
 
 
 
@@ -78,36 +66,3 @@ export class SearchRequestService {
 
 
 }
-/*import {Injectable} from '@angular/core';
-import {Observable} from "rxjs";
-import {User} from "../models/user";
-import {ApiService} from "./api.service";
-
-@Injectable()
-export class UserService {
-
-    constructor(private api: ApiService) {
-
-    }
-
-
-    getUsers(filter?: string): Observable<User[]> {
-
-        let endPoint = '/users';
-
-        return this.api.get(endPoint).map(res => res.json() as User[]).catch(err => Observable.throw(err));
-    }
-
-    search(q: string): Observable<any> {
-        let endPoint = '/search/users?q=' + q;
-        return this.api.get(endPoint).map(res => res.json()).catch(err => Observable.throw(err));
-
-    }
-
-    getUserFollowers(user: string): Observable<any> {
-
-        let endPoint = '/users/' + user + '/followers';
-        return this.api.get(endPoint).map(res => res.json()).catch(err => Observable.throw(err));
-    }
-
-}*/
